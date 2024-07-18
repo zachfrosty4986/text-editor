@@ -11,7 +11,7 @@ module.exports = () => {
       install: './src/js/install.js'
     },
     output: {
-      filename: '[name].bundle.js',
+      filename: 'textEditor.bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
@@ -21,9 +21,9 @@ module.exports = () => {
       }),
       new WebpackPwaManifest({
         filename: 'manifest.json',
-        name: 'Your App Name',
-        short_name: 'App Name',
-        description: 'Description of your app',
+        name: 'Text Editor Management',
+        short_name: 'Text Editor',
+        description: 'An App for editig and styling text!',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         start_url: '/',
