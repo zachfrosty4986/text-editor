@@ -11,49 +11,52 @@ module.exports = () => {
       install: './src/js/install.js'
     },
     output: {
-      filename: 'textEditor.bundle.js',
+      filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-        chunks: ['main'],
+        template: './index.html',
+        title: 'Text Editor'
       }),
       new WebpackPwaManifest({
-        filename: 'manifest.json',
+        fingerprints: false,
+        inject: true,
         name: 'Text Editor Management',
         short_name: 'Text Editor',
         description: 'An App for editig and styling text!',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
-        start_url: '/',
+        background_color: '#272822',
+        theme_color: '#31a9e1',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('icons'),
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),
       new InjectManifest({
-        swSrc: './src/service-worker.js',
-        swDest: 'service-worker.js',
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
       }),
     ],
 
     module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
         {
-          test: /\.js$/,
+          test: /\.m?js$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
