@@ -1,215 +1,249 @@
-/* app shell CSS */
+/* Root variables for global color and layout settings */
 :root {
-    --primary: #31a9e1;
-    --gray: #ececec;
-    --whitesmoke: #f5f5f5;
-    --dark: #222;
-    --monoaki: #272822;
-    --navbar-height: 50px;
-  }
-  
-  body {
-    margin: 0;
-    background-color: var(--monoaki);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-  }
-  
-  h1 {
-    font-size: 22px;
-  }
-  
-  #navbar {
-    height: var(--navbar-height);
-    background-color: var(--primary);
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    font-size: 22px;
-    font-weight: 550;
-    letter-spacing: 0.9px;
-  }
-  
-  .navbar-brand img {
-    padding-top: 10px;
-  }
-  
-  .loading-spinner {
-    animation-duration: 0.75s;
-    animation-iteration-count: infinite;
-    animation-name: rotate-forever;
-    animation-timing-function: linear;
-    height: 30px;
-    width: 30px;
-    border: 3px solid var(--primary);
-    border-right-color: transparent;
-    border-radius: 50%;
-  }
-  
-  .loading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - var(--navbar-height));
-  }
-  
-  #buttonInstall.hidden {
-    display: none;
-  }
-  
-  @keyframes rotate-forever {
-    0% {
+  --primary: #31a9e1; /* Primary color */
+  --gray: #ececec; /* Light gray color */
+  --whitesmoke: #f5f5f5; /* Whitesmoke color */
+  --dark: #222; /* Dark color */
+  --monoaki: #272822; /* Background color */
+  --navbar-height: 50px; /* Height of the navigation bar */
+}
+
+/* Global body settings */
+body {
+  margin: 0;
+  background-color: var(--monoaki);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Style for h1 headings */
+h1 {
+  font-size: 22px;
+}
+
+/* Navigation bar styling */
+#navbar {
+  height: var(--navbar-height);
+  background-color: var(--primary);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 22px;
+  font-weight: 550;
+  letter-spacing: 0.9px;
+}
+
+/* Style for the navbar brand image */
+.navbar-brand img {
+  padding-top: 10px;
+}
+
+/* Loading spinner styling */
+.loading-spinner {
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-name: rotate-forever;
+  animation-timing-function: linear;
+  height: 30px;
+  width: 30px;
+  border: 3px solid var(--primary);
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+/* Container for centering the loading spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--navbar-height));
+}
+
+/* Hidden class for the install button */
+#buttonInstall.hidden {
+  display: none;
+}
+
+/* Keyframes for rotating the loading spinner */
+@keyframes rotate-forever {
+  0% {
       transform: rotate(0deg);
-    }
-  
-    100% {
+  }
+
+  100% {
       transform: rotate(360deg);
-    }
   }
-  
-  .app-update {
-    display: none;
-    position: absolute;
-    right: 10px;
-  }
-  
-  .app-update.show {
-    display: block;
-  }
-  
+}
+
+/* App update notification styling */
+.app-update {
+  display: none;
+  position: absolute;
+  right: 10px;
+}
+
+/* Show class for displaying the app update notification */
+.app-update.show {
+  display: block;
+}
+
+/* Style for navigation buttons */
+.nav-btn {
+  margin: 25px;
+}
+
+/* Base button styling */
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  outline: none;
+  color: #1a1a1a;
+  background-color: #aeaeae;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #cecece;
+  cursor: pointer;
+}
+
+/* Square button variant */
+.btn.btn-squared {
+  border-radius: 0;
+}
+
+/* Small button variant */
+.btn.btn-sm {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.9rem;
+}
+
+/* Large button variant */
+.btn.btn-lg {
+  font-size: 1.25rem;
+  padding: 0.8rem 1.4rem;
+}
+
+/* Block button variant */
+.btn.btn-block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+/* Primary button variant */
+.btn.btn-primary {
+  background-color: #2d3e50;
+  color: #d9e9e8;
+}
+
+/* Primary button hover effect */
+.btn.btn-primary:hover {
+  background-color: #57779a;
+}
+
+/* Danger button variant */
+.btn.btn-danger {
+  background-color: #e64c66;
+  color: #ffffff;
+}
+
+/* Danger button hover effect */
+.btn.btn-danger:hover {
+  background-color: #ee8294;
+}
+
+/* Info button variant */
+.btn.btn-info {
+  background-color: #1bbc9b;
+  color: #ffffff;
+}
+
+/* Info button hover effect */
+.btn.btn-info:hover {
+  background-color: #31e1bd;
+}
+
+/* Light button variant */
+.btn.btn-light {
+  background-color: #d9e9e8;
+  color: #1a1a1a;
+}
+
+/* Light button hover effect */
+.btn.btn-light:hover {
+  background-color: #84b8b4;
+}
+
+/* Dark button variant */
+.btn.btn-dark {
+  background-color: #1a1a1a;
+  color: #d9e9e8;
+}
+
+/* Dark button hover effect */
+.btn.btn-dark:hover {
+  background-color: #5f5f5f;
+}
+
+/* White button variant */
+.btn.btn-white {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+/* White button hover effect */
+.btn.btn-white:hover {
+  background-color: #cccccc;
+}
+
+/* Black button variant */
+.btn.btn-black {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Black button hover effect */
+.btn.btn-black:hover {
+  background-color: #666666;
+}
+
+/* Link button variant */
+.btn.btn-link {
+  background-color: #1b89bc;
+  color: #ffffff;
+}
+
+/* Link button hover effect */
+.btn.btn-link:hover {
+  background-color: #31a9e1;
+}
+
+/* Responsive design for small screens */
+@media only screen and (max-width: 600px) {
   .nav-btn {
-    margin: 25px;
-  }
-  
-  .btn {
-    text-align: center;
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    margin: 0;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 0.3rem;
-    border: 1px solid transparent;
-    outline: none;
-    color: #1a1a1a;
-    background-color: #aeaeae;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  }
-  
-  .btn:hover {
-    background-color: #cecece;
-    cursor: pointer;
-  }
-  
-  .btn.btn-squared {
-    border-radius: 0;
-  }
-  
-  .btn.btn-sm {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.9rem;
-  }
-  
-  .btn.btn-lg {
-    font-size: 1.25rem;
-    padding: 0.8rem 1.4rem;
-  }
-  
-  .btn.btn-block {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
-  
-  .btn.btn-primary {
-    background-color: #2d3e50;
-    color: #d9e9e8;
-  }
-  
-  .btn.btn-primary:hover {
-    background-color: #57779a;
-  }
-  
-  .btn.btn-danger {
-    background-color: #e64c66;
-    color: #ffffff;
-  }
-  
-  .btn.btn-danger:hover {
-    background-color: #ee8294;
-  }
-  
-  .btn.btn-info {
-    background-color: #1bbc9b;
-    color: #ffffff;
-  }
-  
-  .btn.btn-info:hover {
-    background-color: #31e1bd;
-  }
-  
-  .btn.btn-light {
-    background-color: #d9e9e8;
-    color: #1a1a1a;
-  }
-  
-  .btn.btn-light:hover {
-    background-color: #84b8b4;
-  }
-  
-  .btn.btn-dark {
-    background-color: #1a1a1a;
-    color: #d9e9e8;
-  }
-  
-  .btn.btn-dark:hover {
-    background-color: #5f5f5f;
-  }
-  
-  .btn.btn-white {
-    background-color: #ffffff;
-    color: #1a1a1a;
-  }
-  
-  .btn.btn-white:hover {
-    background-color: #cccccc;
-  }
-  
-  .btn.btn-black {
-    background-color: #000000;
-    color: #ffffff;
-  }
-  
-  .btn.btn-black:hover {
-    background-color: #666666;
-  }
-  
-  .btn.btn-link {
-    background-color: #1b89bc;
-    color: #ffffff;
-  }
-  
-  .btn.btn-link:hover {
-    background-color: #31a9e1;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .nav-btn {
       display: none;
-    }
-  
-    .navbar-brand {
+  }
+
+  .navbar-brand {
       display: none;
-    }
-  
-    #navbar {
+  }
+
+  #navbar {
       justify-content: center;
-    }
-  
-    h1 {
-      font-size: 18px;
-    }
   }
+
+  h1 {
+      font-size: 18px;
+  }
+}

@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character set and viewport settings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
     <title>J.A.T.E</title>
     
-      <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
-      </link>
-      <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
-      </script>
-      <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/javascript/javascript.min.js">
-      </script>
-      <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
-      </link>
+    <!-- Link to CodeMirror CSS for styling the code editor -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
+    </link>
+    <!-- Link to CodeMirror JavaScript library for code editor functionality -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
+    </script>
+    <!-- Link to CodeMirror JavaScript mode for syntax highlighting -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/javascript/javascript.min.js">
+    </script>
+    <!-- Link to CodeMirror theme for the code editor -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+    </link>
   </head>
   <body>
+    <!-- Navigation bar with install button, title, and brand icon -->
     <nav id="navbar">
       <div class="nav-btn">
+        <!-- Install button -->
         <a class="btn btn-sm btn-dark" id="buttonInstall" role="button">Install!</a>
       </div>
-     <h1> Just Another Text Editor</h1>
-     
-      <div class="navbar-brand" 
-            ><img src="./assets/icons/icon_96x96.png"
-          /></div>
+      <!-- Page header -->
+      <h1> Just Another Text Editor</h1>
+      <!-- Brand icon -->
+      <div class="navbar-brand">
+        <img src="./assets/icons/icon_96x96.png" />
+      </div>
     </nav>
 
+    <!-- Main content area -->
     <main id="main">
+      <!-- Loading spinner to indicate loading state -->
       <div class="loading-container">
         <div class="loading-spinner"></div>
       </div>
     </main>
-    
   </body>
 </html>
